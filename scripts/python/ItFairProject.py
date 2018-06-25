@@ -1,0 +1,119 @@
+#!/usr/bin/python3.5
+'''
+This is a guess the number game. In this, we habve to guess a number in only 10 tries. I hope you will enjoy this game!
+Author = Juhi Seshadri Iyer
+'''
+
+from random import randint
+from random import shuffle
+
+import sys
+
+
+def number_game():
+
+    x = randint(1,100)
+    print ('The random number that I chose was %s'%(x))
+
+    print('I have chosen a number between 1 and 100. Try and guess the number')
+
+    tries = 0
+    max_tries = 10
+
+    while tries < max_tries:
+        guess = int(input("Guess: "))
+        
+        if guess > 100 or guess < 1:
+            print('The number that you entered is not between 1 and 100')
+            sys.exit()
+
+
+        if guess == x:
+            print('Correct you found the answer in %s tries'%(tries + 1))
+            response = input('do you want to play my other game called the linux game? say y/n: ')
+            if response == 'y':
+                linux_game()
+            else:
+                print ('Thank you for playing my game. I hope you enjoyed it!')
+                sys.exit()
+
+        elif abs(guess - x) > 10:
+            print('Cold')
+        elif abs(guess - x) > 5 and abs(guess -x) < 10:
+            print('Almost there')
+        elif abs(guess -x) < 5:
+            print('Extremely close')
+        tries = tries + 1
+        if tries == max_tries:
+           print ('Its time that your chance goes for a toss! Mwa ha ha ha!')
+           print ('I am sorry, but you have lost your chances.')
+           print ('So, GAME OVER!')
+
+
+def linux_game():
+
+
+    def q1():
+
+        Q1 = input('What is the command in linux terminal to change the permissions of a file?: ')
+        ans1 = ('chmod')
+
+        if Q1 == ans1:
+            print ('You are correct!')
+        else:
+            print ('You are wrong. The correct answer was chmod. So, for you, it is GAME OVER!')
+            sys.exit()
+
+    def q2():
+
+        Q2 = input('Name a secure way to login from one computer to another?: ')
+        ans2 = ('ssh')
+
+        if Q2 == ans2:
+            print ('You are correct!')
+        else:
+            print ('You are wrong. The correct answer is ssh (secure shell).So, for you it is GAME OVER!')
+            sys.exit()
+
+    def q3():
+
+        Q3 = input('Name an inecure protocal to log into a compter?: ')
+        ans3 = ('telnet')
+
+        if Q3 == ans3:
+            print ('You are correct!')
+        else:
+            print ('You are wrong! The correct answer is Telnet! You cannot go forward. So, it is GAME OVER!')
+            sys.exit()
+
+    def q4():
+
+        Q4 = input('What is the port number for ssh?: ')
+        ans4 = ('22')
+
+        if Q4 == ans4:
+            print ('You are correct!')
+        else:
+            print ('You are wrong. The correct answer is 22. So, for you it means GAME OVER!')
+            sys.exit()
+
+    def q5():
+
+        Q5 = input('Which file contains the DNS server inoformation?: ')
+        ans5 = ('/etc/resolv.conf')
+
+        if Q5 == ans5:
+            print ('You are correct!')
+        else:
+            print ('You are wrong. The correct answer is /etc/resolv.conf. So, for you itis GAME OVER!')        
+            sys.exit()
+
+    questions = [q1, q2, q3, q4, q5]
+    shuffle(questions)
+
+    for question in questions:
+        question()
+
+
+number_game()
+linux_game()
