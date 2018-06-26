@@ -9,11 +9,19 @@ from random import shuffle
 
 import sys
 
+print ('This is a games, in which you ohave to guess a number. If you guessed the number below 10 tries, you will get a suprise')
+
+print ('INSTRUCTION!')
+print ('- You have to guess a random number that the computer has chosen.')
+print ('- Then you would have to guess that number in only 10 tries')
+print ('- Then, you can play a suprise game!')
+print ('- Well, it is your choice if you want to play the game.')
+print ('- The game will automaticly pop out, after you are done!')
 
 def number_game():
 
     x = randint(1,100)
-    print ('The random number that I chose was %s'%(x))
+    #print ('The random number that I chose was %s'%(x))
 
     print('I have chosen a number between 1 and 100. Try and guess the number')
 
@@ -46,8 +54,7 @@ def number_game():
         tries = tries + 1
         if tries == max_tries:
            print ('Its time that your chance goes for a toss! Mwa ha ha ha!')
-           print ('I am sorry, but you have lost your chances.')
-           print ('So, GAME OVER!')
+          
 
 
 def linux_game():
@@ -77,7 +84,7 @@ def linux_game():
 
     def q3():
 
-        Q3 = input('Name an inecure protocal to log into a compter?: ')
+        Q3 = input('Name an insecure protocol to log into a computer?: ')
         ans3 = ('telnet')
 
         if Q3 == ans3:
