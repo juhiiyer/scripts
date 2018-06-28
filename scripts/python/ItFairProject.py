@@ -53,12 +53,32 @@ def number_game():
             print('Extremely close')
         tries = tries + 1
         if tries == max_tries:
+           print ('You are wrong. All of your chances are over')
            print ('Its time that your chance goes for a toss! Mwa ha ha ha!')
-          
+
+def sample_question():
+    
+    Q = input('How to go temperalily root?: ')
+    A = ('sudo')
+    if Q == A:
+        print ('You are correct! WOW!')
+    else:
+        print ('You are wrong. The correct answer is sudo. So, it is GAME OVER!')
+        sys.exit()
+
+    Q01 = input('Which sub opperating system does the cyber security people use?: ')
+    A01 = ('kali linux')
+
+    if Q01 == A01:
+        print ('You are correct! You are the one with the sixth sense!')
+    else:
+        print ('You are wrong. The correct answer is kali linux. So it is GAME OVER!')
+        sys.exit()
+            
+
 
 
 def linux_game():
-
 
     def q1():
 
@@ -123,4 +143,5 @@ def linux_game():
 
 
 number_game()
+sample_question()
 linux_game()
