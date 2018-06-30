@@ -21,7 +21,7 @@ print ('- The game will automaticly pop out, after you are done!')
 def number_game():
 
     x = randint(1,100)
-    #print ('The random number that I chose was %s'%(x))
+    
 
     print('I have chosen a number between 1 and 100. Try and guess the number')
 
@@ -53,10 +53,12 @@ def number_game():
             print('Extremely close')
         tries = tries + 1
         if tries == max_tries:
-           print ('You are wrong. All of your chances are over')
+           print ('You are wrong. All of your chances are over!')
+           print ('The random number that I chose was %s'%(x))
            print ('Its time that your chance goes for a toss! Mwa ha ha ha!')
 
 def sample_question():
+    print ('These are some sample questions. Do not remember the answer, as these questions are just a sample!')
     
     Q = input('How to go temperalily root?: ')
     A = ('sudo')
@@ -66,11 +68,11 @@ def sample_question():
         print ('You are wrong. The correct answer is sudo. So, it is GAME OVER!')
         sys.exit()
 
-    Q01 = input('Which sub opperating system does the cyber security people use?: ')
+    Q01 = input('Which linux distribution does the cyber security people use?: ')
     A01 = ('kali linux')
 
     if Q01 == A01:
-        print ('You are correct! You are the one with the sixth sense!')
+        print ('You are correct! You are the one with the sixth sense! You are surely one of kind. So I hope you enjoyed my game! Thank you and have a great day!')
     else:
         print ('You are wrong. The correct answer is kali linux. So it is GAME OVER!')
         sys.exit()
@@ -144,4 +146,4 @@ def linux_game():
 
 number_game()
 sample_question()
-linux_game()
+#linux_game()
