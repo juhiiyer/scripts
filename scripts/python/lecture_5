@@ -1,0 +1,35 @@
+#!/usr/bin/python3.5
+
+'''try:
+
+    n = input('Number: ')
+except:
+    print('not number')'''
+#finally:
+'''
+A finally block is used to perform a clean up opperations like:
+closeing database connections, file connections, network conections etc......
+
+finally can be declared with either try block/except block.
+syntax1:
+trt:
+    ....
+finally:
+    ...
+syntax        
+
+
+def f1():
+    try:
+        n = input('Please enter a number: ')
+        n = int(n)
+        
+    except :
+        print('Not valid integer. Ty again.')
+        raise
+try:
+    f1()
+except:
+    print ('Caught success')
+
+print ('You have entered a correct number.') 
