@@ -18,11 +18,15 @@ print ('- Then, you can play a suprise game!')
 print ('- Well, it is your choice if you want to play the game.')
 print ('- The game will automaticly pop out, after you are done!')
 
-def number_game():
+'''def number_game():
+    no_ofchances = 20
+    ask = input('How many chances do you want?: ')
 
     x = randint(1,100)
+    if no_ofchances >= 20 or 1>0:
+        print ('The number of chances are too many, or too less. Try another number')
+'''     
     
-
     print('I have chosen a number between 1 and 100. Try and guess the number')
 
     tries = 0
