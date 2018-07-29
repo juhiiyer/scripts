@@ -1,4 +1,6 @@
+#!/usr/bin/python3.5
 import re
 text = 'Google Chapter 22 - The Production Environment at 456 Apple'
-result = re.findall(r'C\W+',text)
-print (result)
+string = 'oog'
+if re.match(string, text):
+    print('found')
