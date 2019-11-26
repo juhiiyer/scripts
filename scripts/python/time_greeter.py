@@ -13,6 +13,15 @@ except ValueError:
 
 	print('No, it is not an integer')
 
+tod = input('AM or PM (enter A or P)')
+
+if tod == 'A':
+    print('Good morning')
+elif tod == 'P':
+    print('Good evening')
+else:
+    print('Invalid input')
+
 '''
 print ('You have entered %s'%(question))
 if type(question) == int:
