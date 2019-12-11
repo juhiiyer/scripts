@@ -1,4 +1,9 @@
 #!/usr/bin/python3.6
+'''
+The example is taken from:
+https://www.w3schools.com/python/python_dictionaries.asp
+'''
+
 information = {
     "student1"      : {
         "Name"      :"Juhi",
