@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6
+#!/usr/bin/python3.7
 import time
 lbs = int(input('Enter your weight in pounds: '))
 print("Now calculating your weight in kgs")
