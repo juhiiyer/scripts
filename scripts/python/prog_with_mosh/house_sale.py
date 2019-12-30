@@ -1,6 +1,6 @@
 #!/usr/bin/python3.7
 price_of_house = 1000000
-credit_good = True
+credit_good = False
 ten_per_price = 1000000*10/100
 twenty_per_price = 1000000*20/100
 if credit_good:
