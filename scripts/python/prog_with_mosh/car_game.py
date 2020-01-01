@@ -1,6 +1,7 @@
 #!/usr/bin/python3.7
 user_input = ""
-
+started = False
+stopped = False
 
 while True:
 
@@ -8,15 +9,22 @@ while True:
 
     if user_input == 'help':
         print(' Start: The car will start. \n Stop: The car will stop. \n Quit: It will quit the game.')
-        # break
-    elif user_input == 'start':
-        print('Car started............... READY TO GOOOOOOOOOOOOOOOOOOOOOOOOOOOO!')
-        # break
+        break 
+    if user_input == "start":
+        if started:
+            print('Already started!')
+        else:
+            started = True
+            print('Car started!')
+
     elif user_input == "stop":
-        print('Car stpped.')
-        # break
+        if stopped:
+            print('Car already stopped.')
+        else:
+            stopped = True
+            print('Car stopped.')    
     elif user_input == 'quit':
-        print('Qitting..................')        
+        print('Quitting..................')        
         break
     else:
         print('Invalid input')
