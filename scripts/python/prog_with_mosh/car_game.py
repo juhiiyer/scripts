@@ -15,7 +15,8 @@ while True:
             print('Already started!')
         else:
             started = True
-            print('Car started!')
+            if stopped == True:
+                print('Car started!')
 
     elif user_input == "stop":
         if stopped:
