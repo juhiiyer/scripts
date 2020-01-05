@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6
+#!/usr/bin/python3.7
 '''
 full_name = 'John Smith'
 age = 20
