@@ -1,0 +1,6 @@
+test_file = open('/500gb1/juhiPython/test.txt', 'w')
+test_file.write('sugar is sweet but not\n')
+test_file.write('as sweet as you ! \n')
+test_file.close()
+test_file = open('/500gb1/juhiPython/test.txt', 'r')
+print(test_file.read())
