@@ -33,7 +33,7 @@ def portscan(ipaddress, port):
         sock.connect((ipaddress, port))
         try:
             banner = get_banner(sock)
-            print('(+) The port ' + str(port) +' is open. : ' + str(banner))
+            print('(+) The port ' + str(port) +' is open. : ' + str(banner.decode().strip('\n')))
         except:
             print( '(+) The port ' + str(port) +' is open.' )
 
