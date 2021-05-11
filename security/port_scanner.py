@@ -41,16 +41,18 @@ def portscan(ipaddress, port):
 
         pass
 
-targets = input('(+) enter the target/s ip address (separate targets with ",") : ')
-lport = int(input('(+) enter the minimum port number: '))
-mport = int(input('(+) enter the maximum port number: '))
+if __name__ == '__main__':
+    
+    targets = input('(+) enter the target/s ip address (separate targets with ",") : ')
+    lport = int(input('(+) enter the minimum port number: '))
+    mport = int(input('(+) enter the maximum port number: '))
 
-if ',' in targets:
+    if ',' in targets:
 
-    for ip_add in targets.split(','):
+        for ip_add in targets.split(','):
 
-        scan(ip_add.strip(' '))
+            scan(ip_add.strip(' '))
 
-else:
+    else:
 
-    scan(targets)
+        scan(targets)
