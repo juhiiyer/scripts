@@ -2,20 +2,18 @@
 import socket
 from IPy import IP
 
-lport = 79
-mport = 81
+lport = 20
+mport = 25
 
-class Port():
+class PortScan():
     banners = []
-    open_ports = [ ]
+    open_ports = []
     def __init__(self, target, port_num):
         self.target = target
         self.port_num = port_num
 
 
     def scan(self):
-
-        print(' \n' + ' Scanning the target ' + str(target))
         for port in range(lport, mport):
             self.scan_port(port)
 
