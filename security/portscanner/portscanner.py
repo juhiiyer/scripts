@@ -1,6 +1,11 @@
 import socket
 from IPy import IP
 
+def scan(target):
+    converted_ip = check_ip(target)
+    print('\n' + 'Scanning target : ' + str(target))
+    for port in range(79,82):
+        scan_port(converted_ip, port)
 
 def check_ip(ip):
     try:
@@ -17,11 +22,14 @@ def scan_port(ipaddress, port):
         sock.connect((ipaddress, port))
         print('[+] Port ' + str(port) + ' is open')
     except:
-        print('[-] Port ' + str(port) + ' is closed')
+        pass
 
 
-ipaddress = input('[+] Please Enter the Required target: ')
-converted_ip = check_ip(ipaddress)
+targets = input('[+] Please Enter the Required target/s (split many targets with comma): ')
 
-for port in range(75,81):
-    scan_port(converted_ip, port)
+if ',' in targets:
+    for ip_add in targets.split(','):
+        scan(ip_add.strip(' '))
+else:
+    scan(targets)
+
