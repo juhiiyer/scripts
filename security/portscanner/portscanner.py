@@ -1,4 +1,4 @@
-import socket
+import socket, sys
 from IPy import IP
 
 
@@ -36,9 +36,17 @@ def scan_port(ipaddress, port):
 
 
 targets = input('[+] Please Enter the Required target/s (split many targets with comma): ')
-lport = int(input('Enter the lower port of the range: '))
-mport = int(input('Enter the upper port of the range: '))
+try:
+    lport = int(input('Enter the lower port of the range: '))
+except ValueError:
+    print('The (Lower) Input is not Valid!')
+    sys.exit(1)
 
+try:
+    mport = int(input('Enter the upper port of the range: '))
+except ValueError:
+    print('The (Upper) Input is not Valid!')
+    sys.exit(1)
 
 if ',' in targets:
     for ip_add in targets.split(','):
