@@ -1,11 +1,13 @@
 import socket
 from IPy import IP
 
+
 def scan(target):
     converted_ip = check_ip(target)
     print('\n' + 'Scanning target : ' + str(target))
-    for port in range(1,100):
+    for port in range(lport,mport):
         scan_port(converted_ip, port)
+
 
 def check_ip(ip):
     try:
@@ -17,6 +19,7 @@ def check_ip(ip):
 
 def get_banner(s):
     return s.recv(1024)
+
 
 def scan_port(ipaddress, port):
     try:
@@ -33,6 +36,9 @@ def scan_port(ipaddress, port):
 
 
 targets = input('[+] Please Enter the Required target/s (split many targets with comma): ')
+lport = int(input('Enter the lower port of the range: '))
+mport = int(input('Enter the upper port of the range: '))
+
 
 if ',' in targets:
     for ip_add in targets.split(','):
