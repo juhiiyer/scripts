@@ -13,7 +13,7 @@ def ssh_connect(password, code=0):
         stop_flag = 1
         print(termcolor.colored(('[+] Found Password: ' + password + ', For account ' + username), 'green'))
     except:
-        print(termcolor.colored(('[-] Incorrect Login!: ' + password), 'pink'))
+        print(termcolor.colored(('[-] Incorrect Login!: ' + password), 'red'))
     ssh.close()
 
 host = input('[+] Target Address: ')
