@@ -1,0 +1,8 @@
+import argparse
+from textops import *
+
+ap = argparse.ArgumentParser()
+file = open("ap", 'w')
+pattern = 'STAR'
+for pattern in file:
+    if re.search(pattern, word)
