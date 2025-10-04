@@ -1,0 +1,15 @@
+cd --> change directory to a different location
+ls --> list the contents of the current directory
+mkdir --> makes a new directory
+touch --> creates a new file
+rm --> removes a file or directory
+cp --> copy a file or directory
+mv --> move or rename a file or directory
+echo --> print to the terminal
+cat --> concatinate and print the contents of the file
+grep --> search for a pattern in a file
+chmod --> change the permissions of a file or directory
+sudo --> run a command with admin privs
+df --> display amount of available diskspace
+history --> show a list of previoulsy excecuted commands
+ps --> display info about a running proccess
